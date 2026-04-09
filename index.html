@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>L-System 3D</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
-        body { margin: 0; overflow: hidden; }
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
         #overlay {
             position: fixed;
             top: 1rem;
@@ -25,6 +31,7 @@
     }
     </script>
 </head>
+
 <body>
 
     <!-- Bootstrap overlay panel -->
@@ -33,10 +40,11 @@
             <div class="card-header d-flex justify-content-between align-items-center">
                 <strong>L-System Editor</strong>
                 <button class="btn btn-sm btn-outline-secondary" id="btn-collapse" type="button"
-                        data-bs-toggle="collapse" data-bs-target="#panel-body">
+                    data-bs-toggle="collapse" data-bs-target="#panel-body">
                     ▾
                 </button>
             </div>
+
             <div class="collapse show" id="panel-body">
                 <div class="card-body">
 
@@ -49,8 +57,23 @@
                     <!-- Iterations -->
                     <div class="mb-3">
                         <label class="form-label fw-semibold">Iterations</label>
-                        <input id="iters-input" type="number" min="1" max="10"
-                               class="form-control form-control-sm" value="6">
+                        <input id="iters-input" type="number" min="1" max="10" class="form-control form-control-sm" value="6">
+                    </div>
+
+                    <!-- Symbol Legend -->
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Symbol Legend</label>
+                        <ul class="list-group list-group-sm small">
+                            <li class="list-group-item"><strong>F</strong> → Move forward (draw line)</li>
+                            <li class="list-group-item"><strong>+</strong> → Turn left (yaw +ANGLE)</li>
+                            <li class="list-group-item"><strong>-</strong> → Turn right (yaw -ANGLE)</li>
+                            <li class="list-group-item"><strong>^</strong> → Pitch up</li>
+                            <li class="list-group-item"><strong>&amp;</strong> → Pitch down</li>
+                            <li class="list-group-item"><strong>/</strong> → Roll left</li>
+                            <li class="list-group-item"><strong>\</strong> → Roll right</li>
+                            <li class="list-group-item"><strong>[</strong> → Save state (push)</li>
+                            <li class="list-group-item"><strong>]</strong> → Restore state (pop)</li>
+                        </ul>
                     </div>
 
                     <!-- Rules -->
@@ -63,12 +86,16 @@
 
                     <!-- Status -->
                     <div id="status" class="form-text text-muted"></div>
+
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <script type="module" src="index.js"></script>
 </body>
+
 </html>

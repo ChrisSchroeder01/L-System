@@ -177,11 +177,10 @@ function createRuleRow(symbol = "", production = "") {
     row.className = "rule-row input-group input-group-sm mb-1";
 
     row.innerHTML = `
+        
+        <input type="text" class="rule-symbol form-control" style="max-width:3rem" placeholder="A" value="${symbol}" maxlength="1">
         <span class="input-group-text" style="width:2.5rem; justify-content:center;">→</span>
-        <input type="text" class="rule-symbol form-control" style="max-width:3rem"
-               placeholder="A" value="${symbol}" maxlength="1">
-        <input type="text" class="rule-production form-control"
-               placeholder="production" value="${production}">
+        <input type="text" class="rule-production form-control" placeholder="production" value="${production}">
         <button class="btn btn-outline-danger btn-remove" type="button">✕</button>
     `;
 
