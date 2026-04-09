@@ -117,7 +117,7 @@ const lineMat = new THREE.LineBasicMaterial({ color: 0x2d6a1f });
 const lineObj = new THREE.LineSegments(new THREE.BufferGeometry(), lineMat);
 scene.add(lineObj);
 
-// REBUILD FUNCTION
+// REBUILD
 
 function rebuild() {
     const statusEl = document.getElementById("status");
@@ -155,7 +155,7 @@ function rebuild() {
             positions.push(seg.end.x, seg.end.y, seg.end.z);
         }
 
-        // Replace geometry without touching camera / controls
+        // Replace geometry
         lineObj.geometry.dispose();
         const geo = new THREE.BufferGeometry();
         geo.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
